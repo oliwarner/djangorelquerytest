@@ -1,0 +1,15 @@
+*/cache/*
+database.sqlite3
+settingsdev.py
+
+socket
+*.pyc
+*.pyo
+/static/*
+/media/*
+/venv/
+
+*.sqlite*
+fabfile.py
+
+__pycache__
