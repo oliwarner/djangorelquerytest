@@ -1,4 +1,4 @@
-# http://stackoverflow.com/q/32783582/12870
+## http://stackoverflow.com/q/32783582/
 
 A test to see why Django's realted queries aren't working.
 
@@ -27,10 +27,15 @@ And in the shell, fire in:
 
 It will explode after that. But why?
 
-I'm trying to pick out Booking instances where their category isn't within
-the m2m relationship between their Agent and Category. There's a [more d
-flowery explanation its Stack Overflow question](http://stackoverflow.com/q/32783582/12870).
+I'm trying to pick out Booking instances where the category isn't within
+the m2m relationship between its Agent and Category. There's a [more flowery explanation its Stack Overflow question](http://stackoverflow.com/q/32783582/).
 
+The database is preloaded with 3 Bookings:
+
+ - One where its agent__category matches. 
+ - Two where it doesn't.
+
+I want a query that returns the two incorrect. Good hunting.
 
 ----
 
