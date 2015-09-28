@@ -25,7 +25,11 @@ And in the shell, fire in:
     from querytest.models import Category, Agent, Booking
     Booking.objects.exclude(agent__categories=F('category'))
 
-It will explode after that. But why?
+It will explode after that. 
+
+    OperationalError: no such column: U2.id
+
+## But why?
 
 I'm trying to pick out Booking instances where the category isn't within
 the m2m relationship between its Agent and Category. There's a [more flowery explanation its Stack Overflow question](http://stackoverflow.com/q/32783582/).
