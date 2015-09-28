@@ -1,4 +1,4 @@
-# djangorelquerytest
+# http://stackoverflow.com/q/32783582/12870
 
 A test to see why Django's realted queries aren't working.
 
@@ -19,11 +19,20 @@ Here's a step be step:
     ./manage.py migrate
     ./manage.py shell
 
+And in the shell, fire in:
+
     from django.db.models import F
     from querytest.models import Category, Agent, Booking
     Booking.objects.exclude(agent__categories=F('category'))
 
 It will explode after that. But why?
+
+I'm trying to pick out Booking instances where their category isn't within
+the m2m relationship between their Agent and Category. There's a [more d
+flowery explanation its Stack Overflow question](http://stackoverflow.com/q/32783582/12870).
+
+
+----
 
 This test was written for Django-dev (so I could play with the new
 `python -m django startproject` but the same bug exists in stable 
